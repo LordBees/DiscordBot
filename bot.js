@@ -19,28 +19,25 @@ var bot = new Discord.Client({
 });
 
 bot.on('message',function(user, userID, channelID, msg, evt){
-    if (userID!=235434980468195329 || msg == 'ping'){
-        if ((userID==109400160093601792 || userID == 235431030054584323) && (msg=='ping' || msg=="Ping")){
-           bot.sendMessage({
-                to: channelID,
-                message: 'Pong!',
-                tts: true
-
-            });
-            console.log(user + " said "+msg+" "+timestamp());
-        }else if (msg=='ping' || msg =='Ping'){
-            bot.sendMessage({
-                to: channelID,
-                message: 'Pong!'
-            });
-            console.log(user + " said "+msg+" "+timestamp());
-        }
-    }else if (userID!=370878810377158656){
+    if ((userID==109400160093601792 || userID == 235431030054584323) && (msg=='ping' || msg=="Ping")){
         bot.sendMessage({
             to: channelID,
-            message: msg
+            message: 'Pong!',
+            tts: true
+
         });
-    console.log(user + " said "+msg+" "+timestamp());
+        console.log(user + " said "+msg+" "+timestamp());
+    }else if (msg=='ping' || msg =='Ping'){
+        bot.sendMessage({
+            to: channelID,
+            message: 'Pong!'
+        });
+        console.log(user + " said "+msg+" "+timestamp());
+    }else if (msg == 'pong' || msg == 'Pong'){
+        bot.sendMessage({
+            to: channelID,
+            message: 'Ping!'
+        })
     }
 
 
