@@ -27,20 +27,20 @@ bot.on('message',function(user, userID, channelID, msg, evt){
                 tts: true
 
             });
-            console.log(user + "said "+msg+" "+timestamp());
+            console.log(user + " said "+msg+" "+timestamp());
         }else if (msg=='ping' || msg =='Ping'){
             bot.sendMessage({
                 to: channelID,
                 message: 'Pong!'
             });
-            console.log(user + "said "+msg+" "+timestamp());
+            console.log(user + " said "+msg+" "+timestamp());
         }
     }else if (userID!=370878810377158656){
         bot.sendMessage({
             to: channelID,
             message: msg
         });
-    console.log(user + "said "+msg+" "+timestamp());
+    console.log(user + " said "+msg+" "+timestamp());
     }
 
 
